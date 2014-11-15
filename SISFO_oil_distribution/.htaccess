@@ -1,0 +1,5 @@
+RewriteEngine on
+
+RewriteBase /SISFO_oil_distribution
+RewriteCond $1 !^(index\.php|images|css|fonts|js|robots\.txt)
+RewriteRule ^(.*)$ /index.php/$1 [L]
