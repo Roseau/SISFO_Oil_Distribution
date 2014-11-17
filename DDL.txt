@@ -1,0 +1,29 @@
+create table pusat (
+id_pusat varchar(5),
+nama_pusat varchar(20),
+alamat_pusat varchar(50),
+stok_pusat int(10),
+id_kendaraan varchar(5),
+id_pelanggan varchar(5),
+id_pegawai varchar(5),
+PRIMARY KEY (id_pusat),
+foreign key (id_kendaraan) references kendaraan(id_kendaraan) on delete cascade on update cascade,
+foreign key (id_pelanggan) references pelanggan(id_pelanggan) on delete cascade on update cascade,
+foreign key (id_pegawai) references pegawai(id_pegawai) on delete cascade on update cascade
+);
+
+create table pengiriman (
+id_pengiriman varchar(5),
+id_kendaraan varchar(5),
+id_pegawai varchar(5),
+id_pelanggan varchar(5),
+jadwal_berangkat date,
+jadwal_sampai date,
+waktu_berangkat date,
+waktu_sampai date,
+stok_berangkat int(10),
+biaya_pengiriman int (15),
+foreign key (id_kendaraan) references kendaraan(id_kendaraan) on delete cascade on update cascade,
+foreign key (id_pelanggan) references pelanggan(id_pelanggan) on delete cascade on update cascade,
+foreign key (id_pegawai) references pegawai(id_pegawai) on delete cascade on update cascade
+);
